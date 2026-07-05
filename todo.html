@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<body id="mainPage">
+    <div class="overlay" id="overlay"></div>
+
+    <nav>
+        <div class="left">
+            <h1><a href="#mainPage">To-Do List</a></h1>
+        </div>
+
+        <div class="nav-menu">
+            <button id="close-menu" class="close-btn">&times;</button>
+            <div class="center">
+                <a href="#add">Add</a>
+                <a href="#current">View</a>
+                <a href="#edit">Edit</a>
+                <a href="#delete">Delete</a>
+                <a href="#statistics">Statistics</a>
+            </div>
+            <div class="right main-theme-toggle">
+                <button id="change-theme-btn" class="change-theme-btn">Dark Theme</button>
+            </div>
+        </div>
+
+        <button id="menu-btn">&#9776;</button>
+    </nav>
+
+    <main>
+        <section id="current" class="current">
+            <h2>Current Tasks</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Time Left</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-list">
+                        <!-- <tr>
+                            <td data-label="S.No">1</td>
+                            <td data-label="Name">Buy Groceries</td>
+                            <td data-label="Description">Pick up milk, eggs, and bread from store.</td>
+                            <td data-label="Due Date">2026-07-10</td>
+                            <td data-label="Status">Pending</td>
+                            <td data-label="Time Left">8 Days</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="filter-section">
+                <button id="filter-menu-btn">&#9776; Filters</button>
+                <div id="filter-buttons">
+                    <button id="close-filters" class="close-btn">&times;</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="add" class="add">
+            <h2>Add Task</h2>
+            <form id="add-task-form">
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name" name="task-name" required>
+                <label for="task-desc">Description:</label>
+                <textarea id="task-desc" name="task-desc" required></textarea>
+                <label for="task-due">Due Date:</label>
+                <input type="date" id="task-due" name="task-due" required>
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <section id="edit" class="edit">
+            <h2>Edit Task</h2>
+            <div class="search-bar">
+                <label for="edit-task-number">Enter Task Number:</label>
+                <input type="number" id="edit-task-number" name="edit-task-number" min="1" required>
+                <button type="button" id="edit-search-task-btn">Load Task Details</button>
+            </div>
+            <form id="edit-task-form">
+                <label for="edit-task-name">Task Name:</label>
+                <input type="text" id="edit-task-name" name="edit-task-name" required>
+                <label for="edit-task-desc">Description:</label>
+                <textarea id="edit-task-desc" name="edit-task-desc" required></textarea>
+                <label for="edit-task-due">Due Date:</label>
+                <input type="date" id="edit-task-due" name="edit-task-due" required>
+                <label for="edit-task-status">Status:</label>
+                <select id="edit-task-status" name="edit-task-status">
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <button type="submit" id="update-btn">Update Task</button>
+            </form>
+        </section>
+
+        <section id="delete" class="delete">
+            <h2>Delete Task</h2>
+            <div class="search-bar">
+                <label for="delete-task-number">Enter Task Number:</label>
+                <input type="number" id="delete-task-number" name="delete-task-number" min="1" required>
+                <button type="button" id="delete-search-task-btn">Load Task Details</button>
+            </div>
+            <div id="delete-task-details">
+                <p><strong>Name:</strong> <span id="preview-name">-</span></p>
+                <p><strong>Description:</strong> <span id="preview-desc">-</span></p>
+                <p><strong>Due Date:</strong> <span id="preview-due">-</span></p>
+                <button type="button" id="delete-btn">Delete Task</button>
+            </div>
+        </section>
+
+        <section id="statistics" class="statistics">
+            <h2>Statistics</h2>
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+            <p>Pending Tasks: <span id="pending-tasks">0</span></p>
+        </section>
+    </main>
+
+    <script src="todo.js"></script>
+</body>
+
+</html>

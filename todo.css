@@ -1,0 +1,765 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+    transition: .3s;
+}
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===========================
+   NAVBAR & CONTROLS
+=========================== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.left h1 a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #0077ff;
+}
+
+#menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+    order: 2;
+    /* Positions burger menu on the right edge */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.center {
+    display: flex;
+    gap: 25px;
+}
+
+.center a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.center a:hover {
+    color: #0077ff;
+}
+
+/* Placed on the right side of the menu items */
+.right {
+    display: block;
+}
+
+.right button {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #0077ff;
+    color: white;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.right button:hover {
+    background: #005ed0;
+}
+
+/* Close buttons (x) in sidebar drawers */
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 38px;
+    cursor: pointer;
+    line-height: 1;
+    color: #333;
+    transition: .3s;
+}
+
+.close-btn:hover {
+    color: #dc3545;
+}
+
+/* ===========================
+   MAIN & STRUCTURAL LAYOUT
+=========================== */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #0077ff;
+}
+
+/* ===========================
+   TABLE & RESPONSIVE FIXES
+=========================== */
+
+.table-wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #0077ff;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f9fb;
+}
+
+tbody tr:hover {
+    background: #eef5ff;
+}
+
+/* ===========================
+   FILTER SECTION (Aligned to Left)
+=========================== */
+
+#filter-section {
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#filter-menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#filter-menu-btn:hover {
+    background: #0077ff;
+    color: white;
+    border-color: #0077ff;
+}
+
+#filter-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    transition: .35s;
+}
+
+.filter-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ddd;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.filter-btn:hover {
+    background: #0077ff;
+    color: white;
+}
+
+.filter-btn.active {
+    background: #0077ff;
+    color: white;
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 6px rgba(0, 119, 255, .25);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    width: fit-content;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #0077ff;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+}
+
+form button:hover {
+    background: #005ed0;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-bar button {
+    border: none;
+    background: #0077ff;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-bar button:hover {
+    background: #005ed0;
+}
+
+/* ===========================
+   DELETE SECTION
+=========================== */
+
+#delete-task-details {
+    background: #f8f9fb;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#delete-task-details p {
+    margin-bottom: 15px;
+}
+
+#delete-btn {
+    padding: 12px 28px;
+    border: none;
+    background: #dc3545;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#delete-btn:hover {
+    background: #b52b39;
+}
+
+/* ===========================
+   STATISTICS
+=========================== */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.statistics h2 {
+    grid-column: 1/-1;
+}
+
+.statistics p {
+    background: #eef5ff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+.statistics span {
+    display: block;
+    margin-top: 10px;
+    font-size: 30px;
+    color: #0077ff;
+    font-weight: 700;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ececec;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0077ff;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #005ed0;
+}
+
+/* ===========================
+   DARK MODE SYSTEM
+=========================== */
+
+body.dark-mode {
+    background: #181818;
+    color: #f2f2f2;
+}
+
+body.dark-mode nav {
+    background: #222;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+}
+
+body.dark-mode .left h1 {
+    color: #4da3ff;
+}
+
+body.dark-mode .center a {
+    color: #f2f2f2;
+}
+
+body.dark-mode .center a:hover {
+    color: #4da3ff;
+}
+
+body.dark-mode section {
+    background: #242424;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .4);
+}
+
+body.dark-mode section h2 {
+    color: #4da3ff;
+}
+
+body.dark-mode table {
+    color: #f2f2f2;
+}
+
+body.dark-mode thead {
+    background: #0b65d8;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+    background: #2d2d2d;
+}
+
+body.dark-mode tbody tr:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode td {
+    border-color: #3d3d3d;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #303030;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #4da3ff;
+    box-shadow: 0 0 6px rgba(77, 163, 255, .35);
+}
+
+body.dark-mode label {
+    color: #f2f2f2;
+}
+
+body.dark-mode #delete-task-details {
+    background: #2d2d2d;
+}
+
+body.dark-mode .filter-btn {
+    background: #444;
+    color: #fff;
+}
+
+body.dark-mode .filter-btn:hover,
+body.dark-mode .filter-btn.active {
+    background: #0b65d8;
+}
+
+body.dark-mode .statistics p {
+    background: #303030;
+    color: #fff;
+}
+
+body.dark-mode .statistics span {
+    color: #4da3ff;
+}
+
+body.dark-mode .close-btn {
+    color: #fff;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #222;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #4da3ff;
+}
+
+body.dark-mode .nav-menu,
+body.dark-mode #filter-buttons {
+    background: #242424;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (TABLET & MOBILE BREAKPOINTS)
+   ========================================================================== */
+
+/* ==========================
+   TABLET & LOWER RESPONSIVE RULES (<1024px)
+========================== */
+@media(max-width:1024px) {
+
+    nav {
+        position: relative;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 40px 30px;
+        transition: .35s;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu .close-btn {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 30px;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .center a {
+        padding: 12px 0;
+    }
+
+    .right {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .right button {
+        width: 100%;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    /* ==========================================
+       GRID TABLE METHOD FOR SYSTEM RESPONSIVENESS
+       Turns table headers into clear vertical block layers
+       ========================================== */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Completely hide the default flat tabular row structure */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    body.dark-mode tr {
+        border-color: #444;
+        background: #1e1e1e;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        text-align: right;
+    }
+
+    body.dark-mode td {
+        border-bottom-color: #333;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    /* Insert corresponding labels dynamically via data attributes */
+    td::before {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: #0077ff;
+        content: attr(data-label);
+    }
+
+    body.dark-mode td::before {
+        color: #4da3ff;
+    }
+
+}
+
+/* ==========================
+   MOBILE (768px)
+========================== */
+@media(max-width:768px) {
+
+    section {
+        padding: 20px;
+    }
+
+    .left h1 {
+        font-size: 24px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    #delete-btn {
+        width: 100%;
+    }
+
+}
+
+/* ==========================
+   MOBILE (<480px)
+========================== */
+@media(max-width:480px) {
+
+    nav {
+        padding: 18px;
+    }
+
+    .statistics span {
+        font-size: 26px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    #filter-menu-btn {
+        display: block;
+        margin: 0;
+    }
+
+    #filter-buttons {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 230px;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 40px 20px;
+        gap: 15px;
+        z-index: 999;
+    }
+
+    #filter-buttons.active {
+        left: 0;
+    }
+
+    #filter-buttons .close-btn {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 10px;
+    }
+
+}
